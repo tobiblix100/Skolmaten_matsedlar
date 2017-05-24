@@ -1,24 +1,37 @@
-# This is a template for a Python scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
+import scraperwiki
+import urllib
+import lxml.html
 
-# import scraperwiki
-# import lxml.html
-#
-# # Read in a page
-# html = scraperwiki.scrape("http://foo.com")
-#
-# # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
-#
-# # Write out to the sqlite database using scraperwiki library
-# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
-#
-# # An arbitrary query against the database
-# scraperwiki.sql.select("* from data where 'name'='peter'")
+def scrape_picsandname(new_root):
+  histology = new_root.cssselect("div.thumb-image-box")
+  for info in histology:
+    imgs = info.cssselect("")
 
-# You don't have to do things with the ScraperWiki and lxml libraries.
-# You can use whatever libraries you want: https://morph.io/documentation/python
-# All that matters is that your final data is written to an SQLite database
-# called "data.sqlite" in the current working directory which has at least a table
-# called "data".
+def scrape_content(linkurl):
+  links = scrape_links
+  for link in links:
+    new_html = scraperwiki.scrape(link)
+    new_root = lxml.html.fromstring(new_html)
+    scrape_picsandname(new_root)
+
+def scrape_urls(root):
+  lan = root.cssselect("ul.links li ul")
+  for lankar in lan:
+    lanken = lankar.cssselect("a")
+    if lank:
+      lanet = lanken[0].attrib.get("href")
+      lan_url = baseurl+lanet
+      print lan_url
+      return lan_url
+      
+      
+  
+
+base_url = "http://www.skolmaten.se/"
+
+def scrape_link(url):
+  html = scraperwiki.scrape(url)
+  root = lxml.html.fromstring(html)
+  scrape_urls(root)
+
+scrape_link(base_url)
