@@ -15,7 +15,7 @@ def scrape_content(linkurl):
     scrape_picsandname(new_root)
 
 def scrape_urls(root):
-  lan = root.cssselect("ul.links li ul")
+  lan = root.cssselect("ul.links li[1] ul")
   for lankar in lan:
     lanken = lankar.cssselect("a")
     if lanken:
