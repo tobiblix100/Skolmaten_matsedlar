@@ -20,7 +20,7 @@ def scrape_urls(root):
     lanken = lankar.cssselect("a")
     if lanken:
       lanet = lanken[0].attrib.get("href")
-      lan_url = baseurl+lanet
+      lan_url = base_url+lanet
       print lan_url
       return lan_url
       
