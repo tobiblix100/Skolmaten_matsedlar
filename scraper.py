@@ -17,7 +17,7 @@ def scrape_content(linkurl):
 def scrape_urls(root):
   lan = root.cssselect("ul.links li")
   for lans in lan:
-    lanken = lans[1].cssselect("ul li a")
+    lanken = lans[1].cssselect("ul li")
     if lanken:
       print lanken
       nya_lanken = lanken.tag
