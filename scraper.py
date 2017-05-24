@@ -15,10 +15,11 @@ def scrape_content(linkurl):
     scrape_picsandname(new_root)
 
 def scrape_urls(root):
-  lan = root.cssselect("ul.links li[1] ul")
+  lan = root.cssselect("ul.links li")
   for lankar in lan:
-    lanken = lankar.cssselect("a")
-    if lanken:
+    lanken = lankar[2].cssselect("ul")
+    nya_lanken = lanken.cssselect("li")
+    if nya_lanken:
       lanet = lanken[0].attrib.get("href")
       lan_url = base_url+lanet
       print lan_url
