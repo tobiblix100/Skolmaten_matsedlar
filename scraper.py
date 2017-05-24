@@ -19,7 +19,8 @@ def scrape_urls(root):
   for lans in lan:
     lanken = lans.cssselect("ul li")
     if lanken:
-      print lanken.text
+      lankar = lanken.cssselect("a")
+      print lankar
      
       
       
