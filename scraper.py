@@ -16,7 +16,7 @@ def scrape_content(linkurl):
 
 def scrape_urls(root):
   lan = root.cssselect("ul.links li")
-  For lans in lan:
+  for lans in lan:
     lanken = lans.cssselect("ul a")
     if lanken:
       nya_lanken = lanken.attrib.get("href")
