@@ -20,10 +20,7 @@ def scrape_urls(root):
     lanken = lans[1].cssselect("ul li")
     if lanken:
       print lanken
-      nya_lanken = lanken.tag
-      lan_url = base_url + nya_lanken
-      print lan_url
-      return lan_url
+     
       
       
   
